@@ -46,7 +46,7 @@ const calculateTotalCost = (item) => {
 const calculateTotalAmount = () => {
   return cart.reduce((total, item) => {
     const quantity = parseFloat(item.quantity) || 0;
-    const cost = parseFloat(item.cost) || 0;
+    const cost = parseFloat(filterNumbers(item.cost)) || 0;
     console.log("Cart Item:", item, "Quantity:", quantity, "Cost:", cost);  // Add this line to debug
     return total + (quantity * cost);
   }, 0);
