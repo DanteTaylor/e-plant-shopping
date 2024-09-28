@@ -54,7 +54,8 @@ const CartItem = ({ onContinueShopping }) => {
 
   return (
     <div className="cart-container">
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount().toFixed(2)}</h2>
+      <h2 style={{ color: 'black' }}>Total Cart Amount: ${Math.round(calculateTotalAmount())}</h2>
+
       <div>
         {cart.map((item) => (
           <div className="cart-item" key={item.name}>
@@ -78,7 +79,7 @@ const CartItem = ({ onContinueShopping }) => {
                   +
                 </button>
               </div>
-              <div className="cart-item-total">Total: ${calculateTotalCost(item).toFixed(2)}</div>
+              <div className="cart-item-total">Total: ${calculateTotalCost(item)}</div>
               <button className="cart-item-delete" onClick={() => handleRemove(item)}>
                 Delete
               </button>
