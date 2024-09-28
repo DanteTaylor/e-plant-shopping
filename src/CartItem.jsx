@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeItem, updateQuantity } from './CartSlice';
+import { useSelector, useDispatch } from 'react-redux'; // Just import the dispatch and selector hooks
+import { removeItem, updateQuantity } from './CartSlice'; // Import actions, don't export them
 import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
@@ -56,7 +56,7 @@ const CartItem = ({ onContinueShopping }) => {
             <img className="cart-item-image" src={item.image} alt={item.name} />
             <div className="cart-item-details">
               <div className="cart-item-name">{item.name}</div>
-              <div className="cart-item-cost">Cost per unit: ${item.cost}</div>
+              <div className="cart-item-cost">{item.cost}</div>
               <div className="cart-item-quantity">
                 <button
                   className="cart-item-button cart-item-button-dec"
@@ -91,4 +91,4 @@ const CartItem = ({ onContinueShopping }) => {
   );
 };
 
-export default CartItem;
+export default CartItem; // Only export the React component
