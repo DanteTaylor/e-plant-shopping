@@ -218,6 +218,9 @@ function ProductList() {
             ]
         }
     ];
+    const filterNumbers = (input) => {
+        return input.toString().replace(/\D/g, ''); // Removes non-digit characters
+    };
    const styleObj={
     backgroundColor: '#4CAF50',
     color: '#fff!important',
@@ -290,7 +293,7 @@ const handleAddToCart = (product) => {
                         <img className="product-image" src={plant.image} alt={plant.name} />
                         <div className="product-title">{plant.name}</div>
                         <div className="product-description">{plant.description}</div>
-                        <div className="product-cost">{plant.cost}</div>
+                        <div className="product-cost">${filterNumbers(plant.cost)}</div>
                         <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
                     </div>
                     ))}

@@ -3,18 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
 
+
+
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector((state) => state.cart.items); // Get cart items from Redux store
   const dispatch = useDispatch();
 
-  // Calculate total amount for all products in the cart
-  const calculateTotalAmount = () => {
-    return cart.reduce((total, item) => {
-      const quantity = parseFloat(item.quantity) || 0;
-      const cost = parseFloat(item.cost) || 0;
-      return total + (quantity * cost);
-    }, 0);
+  const filterNumbers = (input) => {
+    // Use regex to replace all non-numeric characters with an empty string
+    return input.replace(/\D/g, '');
   };
+  
 
   // Handle incrementing the quantity of an item
   const handleIncrement = (item) => {
@@ -35,12 +34,24 @@ const CartItem = ({ onContinueShopping }) => {
     dispatch(removeItem(item.name));
   };
 
-  // Calculate total cost based on quantity for an item
-  const calculateTotalCost = (item) => {
+// Calculate total cost based on quantity for an item
+const calculateTotalCost = (item) => {
+  const quantity = parseFloat(item.quantity) || 0;
+  const cost = parseFloat(item.cost) || 0;
+  console.log("Item:", item, "Quantity:", quantity, "Cost:", cost);  // Add this line to debug
+  return quantity * cost;
+};
+
+// Calculate total amount for all products in the cart
+const calculateTotalAmount = () => {
+  return cart.reduce((total, item) => {
     const quantity = parseFloat(item.quantity) || 0;
     const cost = parseFloat(item.cost) || 0;
-    return quantity * cost;
-  };
+    console.log("Cart Item:", item, "Quantity:", quantity, "Cost:", cost);  // Add this line to debug
+    return total + (quantity * cost);
+  }, 0);
+};
+
 
   // Handle the "Continue Shopping" button click
   const handleContinueShopping = (e) => {
@@ -78,7 +89,7 @@ const CartItem = ({ onContinueShopping }) => {
                   +
                 </button>
               </div>
-              <div className="cart-item-total">Total: ${calculateTotalCost(item)}</div>
+              <div className="cart-item-total">Total: ${filterNumbers(item.cost) * item.quantity}</div>
               <button className="cart-item-delete" onClick={() => handleRemove(item)}>
                 Delete
               </button>
