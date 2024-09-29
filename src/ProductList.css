@@ -39,6 +39,17 @@ body {
    
 }
 
+
+/* Product masthead */
+.product-masthead {
+    text-align: center;
+    margin: 1.5rem auto;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    display: block;
+    width: 30%;
+}
+
 /* Product Grid */
 .product-grid {
     display:flex;
@@ -73,6 +84,7 @@ body {
     
     gap: 20px;
 }
+
 
 /* Pseudo-classes - Hover effect on product button */
 .product-card:hover {

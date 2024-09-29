@@ -315,7 +315,7 @@ function ProductList() {
                     </div>
                     <div>
                         <a href="#" onClick={handleCartClick} style={styleA}>
-                            <h1 className="cart">
+                            <h2 className="cart">
                                 <div className="product-cart-count cart_quantity_count">{totalItems}</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="68" width="68">
                                     <rect width="156" height="156" fill="none"></rect>
@@ -323,7 +323,7 @@ function ProductList() {
                                     <circle cx="184" cy="216" r="12"></circle>
                                     <path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
                                 </svg>
-                            </h1>
+                            </h2>
                         </a>
                     </div>
                 </div>
@@ -332,7 +332,7 @@ function ProductList() {
                 <div className="product-grid">
                     {plantsArray.map((category, index) => (
                         <div key={index}>
-                            <h1><div>{category.category}</div></h1>
+                            <h1 className="product-masthead">{category.category}</h1>
                             <div className="product-list">
                                 {category.plants.map((plant, plantIndex) => (
                                     <div className={`product-card ${addedToCart[plant.name] ? 'in-cart' : ''}`} key={plantIndex}>
