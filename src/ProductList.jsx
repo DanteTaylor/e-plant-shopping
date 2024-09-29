@@ -301,7 +301,7 @@ function ProductList() {
                 <div className="tag">
                     <div className="luxury">
                         
-                        <a href="/" style={{ textDecoration: 'none' }}>
+                        <a href="/e-plant-shopping" style={{ textDecoration: 'none' }}>
                             <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                             <span className="luxury-name">
                                 <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
