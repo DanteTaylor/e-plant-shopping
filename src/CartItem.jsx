@@ -69,7 +69,7 @@ const CartItem = ({ onContinueShopping }) => {
     <div className="cart-container">
       {/* Display both total amount and total items */}
       <h2 style={{ color: 'black' }}>
-        Total Cart Amount: ${calculateTotalAmount().toFixed(2)}<br />
+        Total Cart Amount: ${calculateTotalAmount().toFixed(0)}<br />
       </h2>
       <div>
         {cart.map((item) => (
