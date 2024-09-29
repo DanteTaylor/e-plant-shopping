@@ -185,6 +185,12 @@ body {
 .luxury img {
     margin-right: 3rem;
 }
+.luxury-name {
+    display: block;
+    float: right;
+    padding-top: .7rem;
+}
+
 .cart{
     color: white;
     display: flex;
