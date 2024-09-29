@@ -107,8 +107,13 @@ body {
     margin-top: 10px;
 }
 
+
 .product-button:hover {
     background-color: #c0392b;
+}
+
+.product-button.added {
+    background-color: #454545;
 }
 
 /* Pseudo-elements - Sale badge */
