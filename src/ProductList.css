@@ -182,6 +182,9 @@ body {
     width: 650px;
     font-size: 19px;
 }
+.luxury img {
+    margin-right: 3rem;
+}
 .cart{
     color: white;
     display: flex;
